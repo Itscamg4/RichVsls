@@ -378,12 +378,83 @@
         .booking-intro {
             text-align: center;
             max-width: 620px;
-            margin: 0 auto 3.5rem;
+            margin: 0 auto 2rem;
             color: var(--muted);
             font-size: 0.92rem;
             line-height: 1.9;
         }
         .booking-intro strong { color: var(--gold); font-weight: 400; }
+
+        /* ── CONSULT NOTICE ── */
+        .booking-consult-notice {
+            max-width: 700px;
+            margin: 0 auto 3.5rem;
+            padding: 1.6rem 2rem;
+            border: 1px solid rgba(201,169,110,0.35);
+            background: rgba(201,169,110,0.04);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        .booking-consult-notice::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 3px;
+            background: var(--grad);
+        }
+        .booking-consult-notice .notice-icon {
+            font-size: 1.1rem;
+            color: var(--gold);
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+        .booking-consult-notice .notice-heading {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            color: var(--cream);
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.6rem;
+        }
+        .booking-consult-notice .notice-body {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.84rem;
+            color: var(--muted);
+            line-height: 1.8;
+            margin-bottom: 1.2rem;
+        }
+        .booking-consult-notice .notice-body strong {
+            color: var(--cream);
+            font-weight: 500;
+        }
+        .notice-contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.2rem;
+        }
+        .notice-contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+            text-decoration: none;
+            border: 1px solid rgba(201,169,110,0.3);
+            padding: 0.5rem 1.1rem;
+            transition: all 0.3s var(--ease);
+        }
+        .notice-contact-link:hover {
+            background: rgba(201,169,110,0.1);
+            border-color: var(--gold);
+            color: var(--cream);
+        }
+        .notice-contact-link i { font-size: 0.7rem; opacity: 0.8; }
 
         .booking-section-label {
             font-family: 'Jost', sans-serif;
@@ -435,7 +506,6 @@
             position: relative;
         }
 
-        /* ── FIXED: full image display, no crop ── */
         .booking-card-img {
             width: 100%;
             height: auto;
@@ -795,6 +865,7 @@
             .floating-headshot { float:none; display:block; width:100%; max-width:300px; margin:1.5rem auto; }
             .slide-ctrl--prev { left:0.75rem; }
             .slide-ctrl--next { right:0.75rem; }
+            .notice-contact-row { flex-direction: column; align-items: center; }
         }
     </style>
 </head>
@@ -963,9 +1034,29 @@
         <div id="booking" class="page">
             <h2 data-reveal="up">Book a Session</h2>
             <div class="section-line" data-reveal="scale"></div>
+
             <div class="booking-intro" data-reveal="up">
                 <p>Every package includes <strong>all raw photos</strong> and a <strong>1–2 day turnaround</strong>. A deposit is required at the time of booking to secure your date.</p>
-                <p style="margin-top:0.8rem;">Reach out with any questions before booking — Noah is happy to help you choose the right package.</p>
+            </div>
+
+            <!-- CONSULT NOTICE -->
+            <div class="booking-consult-notice" data-reveal="up">
+                <i class="fas fa-comment-dots notice-icon"></i>
+                <div class="notice-heading">Talk to Noah First</div>
+                <p class="notice-body">
+                    Please <strong>reach out before submitting any payment.</strong> Noah will confirm your date, answer questions, and make sure you're in the right package — then walk you through next steps.
+                </p>
+                <div class="notice-contact-row">
+                    <a href="tel:+14073075575" class="notice-contact-link">
+                        <i class="fas fa-phone"></i> (407) 307-5575
+                    </a>
+                    <a href="mailto:noaharich60@gmail.com" class="notice-contact-link">
+                        <i class="fas fa-envelope"></i> noaharich60@gmail.com
+                    </a>
+                    <a href="https://www.instagram.com/richvsls/" target="_blank" class="notice-contact-link">
+                        <i class="fab fa-instagram"></i> @richvsls
+                    </a>
+                </div>
             </div>
 
             <div class="booking-section-label" data-reveal="fade">Lifestyle Sessions</div>
