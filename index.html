@@ -385,7 +385,6 @@
         }
         .booking-intro strong { color: var(--gold); font-weight: 400; }
 
-        /* ── CONSULT NOTICE ── */
         .booking-consult-notice {
             max-width: 700px;
             margin: 0 auto 3.5rem;
@@ -856,16 +855,117 @@
             50%       { opacity: 0.9; transform: translateY(5px); }
         }
 
-        @media (max-width:900px) {
+        /* ─── MOBILE FIXES ─── */
+        @media (max-width: 900px) {
             .gal-grid { grid-template-columns: repeat(2, 1fr); gap: 2px; }
         }
-        @media (max-width:768px) {
-            header h1 { font-size:2.6rem; letter-spacing:5px; }
-            nav button { padding:0.85rem 0.7rem; font-size:0.6rem; letter-spacing:2px; }
-            .floating-headshot { float:none; display:block; width:100%; max-width:300px; margin:1.5rem auto; }
-            .slide-ctrl--prev { left:0.75rem; }
-            .slide-ctrl--next { right:0.75rem; }
+
+        @media (max-width: 768px) {
+            /* existing fixes */
+            header h1 { font-size: 2.6rem; letter-spacing: 5px; }
+            nav button { padding: 0.85rem 0.7rem; font-size: 0.6rem; letter-spacing: 2px; }
+            .slide-ctrl--prev { left: 0.75rem; }
+            .slide-ctrl--next { right: 0.75rem; }
             .notice-contact-row { flex-direction: column; align-items: center; }
+
+            /* ── ABOUT PAGE FIXES ── */
+
+            /* Container: tighter side padding so About blocks have room */
+            .container { padding: 0 1rem 4rem; }
+
+            /* Contact block: single column, centered, less padding */
+            .about-contact {
+                grid-template-columns: 1fr;
+                padding: 2rem 1.5rem;
+                margin: 0;
+                gap: 1.5rem;
+                text-align: center;
+            }
+
+            /* Each contact item centered */
+            .about-contact-item {
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+            }
+
+            /* Prevent long email from overflowing */
+            .about-contact-value {
+                font-size: 0.92rem;
+                word-break: break-all;
+                max-width: 100%;
+            }
+
+            /* Intro text: full width with padding */
+            .about-intro {
+                max-width: 100%;
+                padding: 0 0.5rem;
+                margin-top: 2rem;
+                font-size: 0.9rem;
+            }
+
+            /* Bio section: less top margin and padding, no overflow */
+            .bio-section {
+                margin: 2.5rem auto 0;
+                padding-top: 2rem;
+                max-width: 100%;
+            }
+
+            /* Bio heading: reduce letter-spacing and font-size so it doesn't clip */
+            .bio-content h3 {
+                font-size: 1.6rem;
+                letter-spacing: 1.5px;
+                margin-bottom: 1.5rem;
+                text-align: center;
+            }
+
+            /* Headshot: block, centered, full width */
+            .floating-headshot {
+                float: none;
+                display: block;
+                width: 100%;
+                max-width: 280px;
+                margin: 0 auto 1.5rem;
+            }
+
+            /* Bio paragraphs: readable on small screens */
+            .bio-content p {
+                font-size: 0.9rem;
+                text-align: left;
+            }
+
+            /* Large bottom photo: full width */
+            .large-headshot {
+                width: 100%;
+                margin-top: 2rem;
+            }
+
+            /* Page h2 headings: tighter spacing to prevent clipping */
+            h2 {
+                font-size: 2rem;
+                letter-spacing: 3px;
+                margin: 3rem 0 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-contact {
+                padding: 1.5rem 1rem;
+            }
+
+            .about-contact-value {
+                font-size: 0.85rem;
+            }
+
+            .bio-content h3 {
+                font-size: 1.3rem;
+                letter-spacing: 1px;
+            }
+
+            h2 {
+                font-size: 1.7rem;
+                letter-spacing: 2px;
+            }
         }
     </style>
 </head>
@@ -1039,7 +1139,6 @@
                 <p>Every package includes <strong>all raw photos</strong> and a <strong>1–2 day turnaround</strong>. A deposit is required at the time of booking to secure your date.</p>
             </div>
 
-            <!-- CONSULT NOTICE -->
             <div class="booking-consult-notice" data-reveal="up">
                 <i class="fas fa-comment-dots notice-icon"></i>
                 <div class="notice-heading">Talk to Noah First</div>
